@@ -1,0 +1,176 @@
+@import './index.scss';
+
+/* !!!SECTION WORKS!!! */
+.works {
+  background-color: color(secondary);
+  font-family: font(paragraph);
+  position: relative;
+  text-align: center;
+  padding: 4em 2em 8em;
+
+  @include response(md) {
+    padding: 4em 4em 8em;
+  }
+
+  @include response(lg) {
+    padding: 10em 4em 16em;
+  }
+
+  // .container {
+  //   @include response(xxxl) {
+  //     &::before,
+  //     &::after {
+  //       content: "";
+  //       background-color: color(secondary);
+  //       width: calc((100vw - 1366px) / 2);
+  //       position: absolute;
+  //       inset: 0;
+  //       z-index: 10;
+  //     }
+
+  //     &::after {
+  //       margin-left: auto;
+  //     }
+  //   }
+  // }
+
+  h2.title {
+    font-size: 6rem;
+    font-weight: 700;
+    color: color(black333);
+    font-family: font(title);
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+
+    @include response(md) {
+      font-size: 8rem;
+      margin-bottom: 2em;
+    }
+
+    &::before {
+      content: 'Works';
+      transform: scale(3);
+      font-weight: 700;
+      font-size: 3rem;
+      position: absolute;
+      color: color(darkOpacity);
+      padding-top: 4rem;
+      z-index: -1;
+
+      @include response(md) {
+        transform: scale(4);
+      }
+    }
+  }
+
+  .works_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2em;
+
+    @include response(sm) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    &_object {
+      cursor: pointer;
+      width: 100%;
+
+      .top_bar {
+        background-color: color(blackOpa80);
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+
+        h3.title {
+          font-size: 2rem;
+          color: color(whitef2);
+          text-transform: uppercase;
+        }
+      }
+
+      .main_content {
+        position: relative;
+
+        &::after {
+          content: '';
+          inset: 0;
+          background-color: color(blackOpa80);
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 0 0 5px 5px;
+          height: 0;
+          transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+          transition-delay: 200ms;
+        }
+
+        &::before {
+          content: 'more...';
+          position: absolute;
+          bottom: 5%;
+          left: 50%;
+          transform: translate(-50%) scale(0);
+          background-color: color(primary);
+          color: color(whitef2);
+          font-weight: 700;
+          padding: 0.3em 0.5em;
+          border-radius: 5px;
+          font-size: size(sm);
+          box-shadow: 2px 2px 0px 0px color(blackOpa80);
+          z-index: 1;
+          transition: all 200ms cubic-bezier(0, 0, 1, -0.2);
+          transition-delay: 0ms;
+        }
+
+        img {
+          width: 100%;
+          display: block;
+          border-radius: 0 0 5px 5px;
+        }
+
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          grid-gap: 1em;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 80%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+
+          .tag {
+            background-color: color(primary);
+            color: color(whitef2);
+            font-weight: 700;
+            padding: 0.5em;
+            border-radius: 5px;
+            font-size: size(sm);
+            box-shadow: 2px 2px 0px 0px color(blackOpa80);
+            transform: scale(0);
+            transition: all 200ms cubic-bezier(0, 0, 1, -0.2);
+            transition-delay: 0ms;
+          }
+        }
+      }
+      &:hover .main_content::after {
+        height: 100%;
+      }
+      &:hover .main_content::before {
+        transform: translate(-50%) scale(1);
+        transition-delay: 700ms;
+      }
+      &:hover .tags .tag {
+        transform: scale(1);
+        transition-delay: 400ms;
+      }
+    }
+  }
+}

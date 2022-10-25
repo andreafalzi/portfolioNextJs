@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+$font-families: (
+  title: (
+    'Montserrat',
+    sans-serif,
+  ),
+  paragraph: (
+    'Poppins',
+    sans-serif,
+  ),
+);
+
+@function font($font-name) {
+  @return map-get($font-families, $font-name);
+}
+
+$colors: (
+  primary: #424242,
+  secondary: #d2d2d2,
+  tertiary: #00ff99,
+  black333: rgb(51, 51, 51),
+  blackOpa80: rgba(51, 51, 51, 0.8),
+  whitef2: rgb(242, 242, 242),
+  darkOpacity: rgba(46, 46, 46, 0.05),
+  lightOpacity: rgba(242, 242, 242, 0.03),
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$font-sizes: (
+  xxl: 5rem,
+  xl: 3rem,
+  lg: 2.5rem,
+  md: 2rem,
+  sm: 1.6rem,
+  xs: 1rem,
+);
+
+@function size($size) {
+  @return map-get($font-sizes, $size);
+}

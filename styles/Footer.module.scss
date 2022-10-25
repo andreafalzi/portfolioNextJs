@@ -1,0 +1,57 @@
+@import './index.scss';
+
+/* !!!FOOTER!!! */
+.footer {
+  padding: 10em 2em;
+
+  background-color: color(primary);
+  color: color(whitef2);
+  font-family: font(paragraph);
+
+  .logo {
+    width: 10rem;
+    margin: 0 auto;
+
+    @include response(lg) {
+      width: 15rem;
+    }
+  }
+
+  .footer_links ul {
+    margin-top: 4.5rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: space-evenly;
+    row-gap: 15px;
+
+    a {
+      color: color(whitef2);
+      font-size: size(sm);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &:hover {
+        color: color(tertiary);
+      }
+
+      @include response(md) {
+        font-size: size(md);
+      }
+
+      @include response(lg) {
+        font-size: size(lg);
+      }
+    }
+  }
+
+  .copy {
+    font-size: size(xs);
+    margin-top: 3.5rem;
+    text-align: center;
+
+    @include response(md) {
+      font-size: size(sm);
+    }
+  }
+}

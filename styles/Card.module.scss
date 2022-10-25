@@ -1,0 +1,63 @@
+@import './index.scss';
+
+.about_cards_card {
+  border: 2px color(secondary) solid;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.4s;
+  z-index: 10;
+  background-color: color(primary);
+
+  &_title {
+    border-bottom: 2px color(secondary) solid;
+    padding: 1rem;
+    font-size: size(md);
+    font-family: font(title);
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+  }
+
+  &_container {
+    overflow: auto;
+    // transition: all 0.2s ease-out;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #777;
+
+    &::-webkit-scrollbar {
+      width: 0.5vw;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #777;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #555;
+    }
+
+    &_paragraph {
+      padding: 1rem;
+      font-family: font(paragraph);
+    }
+  }
+}
+
+.open .about_cards_card_title {
+  color: color(tertiary);
+}
+
+.close .about_cards_card_container {
+  opacity: 0;
+  max-height: 0;
+  // transform: scaleY(0);
+  transition: all 700ms ease-out;
+}
+
+.open .about_cards_card_container {
+  // transform: scaleY(1);
+  // transform-origin: top;
+  // transition: transform .4s ease;
+  opacity: 1;
+  max-height: 250px;
+  transition: all 700ms ease-out;
+}

@@ -1,0 +1,109 @@
+@import './index.scss';
+
+/* !!!NAVBAR!!! */
+.nav {
+  background-color: color(primary);
+
+  .navbar {
+    height: 10vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1em 2em;
+
+    @include response(md) {
+      padding: 1em 4em;
+    }
+
+    @include response(xxl) {
+      padding: 1em 0em;
+    }
+
+    &_logo {
+      width: 50px;
+      cursor: pointer;
+    }
+
+    &_list {
+      display: none;
+
+      @include response(lg) {
+        display: flex;
+        margin-left: auto;
+
+        li a {
+          position: relative;
+          font-size: size(md);
+          font-weight: 900;
+          font-family: font(title);
+          color: color(whitef2);
+          font-family: font(paragraph);
+          margin-left: 3em;
+          transition: color 200ms ease-in;
+          text-transform: uppercase;
+          isolation: isolate;
+
+          &::after {
+            content: '';
+            width: 20px;
+            height: 5px;
+            border-radius: 2px;
+            background-color: color(tertiary);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 700ms ease;
+            z-index: -1;
+          }
+
+          &:hover::after {
+            width: 100%;
+            // height: 130%;
+            // left: -5%;
+          }
+        }
+      }
+    }
+
+    &_responsive {
+      position: fixed;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: color(blackOpa80);
+      z-index: 20;
+      padding: 1em 2em;
+
+      @include response(md) {
+        padding: 1em 4em;
+      }
+
+      li {
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: size(sm);
+          color: color(whitef2);
+          font-family: font(paragraph);
+
+          i {
+            font-size: size(md);
+          }
+        }
+        .span_icon {
+          color: color(tertiary);
+        }
+      }
+
+      @include response(lg) {
+        display: none;
+      }
+    }
+  }
+}
