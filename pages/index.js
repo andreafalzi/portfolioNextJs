@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import About from '../components/About/About';
+import Expirience from '../components/Expirience/Expirience';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
@@ -12,7 +13,7 @@ export default function Home() {
       <Head>
         <meta charset='UTF-8' />
         <title>Web Experiences Crafted With Coding Powers</title>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width' />
         <meta name='description' content='Personal Porfolio with projects' />
         <meta property='og:title' content='Web Experiences Crafted With Coding Powers' />
@@ -42,6 +43,9 @@ export default function Home() {
         </section>
         <section id='about'>
           <About />
+        </section>
+        <section id='expirience'>
+          <Expirience />
         </section>
       </main>
       <Footer />

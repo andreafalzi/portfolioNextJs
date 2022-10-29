@@ -1,0 +1,110 @@
+@import './index.scss';
+
+.expirience {
+  background-color: color(secondary);
+  font-family: font(paragraph);
+  position: relative;
+  padding: 4em 2em;
+  overflow: hidden;
+
+  @include response(md) {
+    padding: 4em 4em;
+  }
+
+  @include response(lg) {
+    padding: 10em 4em 10em;
+  }
+
+  h3.title {
+    font-size: 6rem;
+    font-weight: 700;
+    color: color(black333);
+    margin-bottom: 2em;
+    text-align: center;
+    font-family: font(title);
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+
+    @include response(md) {
+      font-size: 8rem;
+      margin-bottom: 2em;
+    }
+
+    &::before {
+      content: 'Expirience';
+      transform: scale(3);
+      font-weight: 700;
+      font-size: 3rem;
+      position: absolute;
+      color: color(darkOpacity);
+      padding-top: 4rem;
+      z-index: -1;
+
+      @include response(md) {
+        transform: scale(4);
+      }
+    }
+  }
+
+  .expirienceSlider {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    .expirienceCard {
+      .cardText {
+        margin-inline: 2rem;
+        height: 400px;
+        width: 300px;
+        background-color: color(primary);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        scroll-snap-align: center;
+
+        .title,
+        .footer {
+          height: 10%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          font-family: font(title);
+          color: color(black333);
+          background-color: color(tertiary);
+          width: 100%;
+        }
+
+        .content {
+          height: 80%;
+          font-size: 1.5rem;
+          font-family: font(paragraph);
+          color: color(whitef2);
+          padding: 2rem 1rem;
+        }
+      }
+
+      .cardTimeline {
+        height: 2px;
+        background-color: color(primary);
+        width: 100%;
+        margin-top: 5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+          content: '';
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          background-color: inherit;
+        }
+      }
+    }
+  }
+}

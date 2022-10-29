@@ -71,6 +71,9 @@
         font-weight: 300;
         margin-top: 2em;
         color: color(secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @include response(md) {
           font-size: size(lg);
@@ -78,6 +81,7 @@
 
         svg {
           color: color(tertiary);
+          margin-right: 1rem;
         }
       }
     }

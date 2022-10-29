@@ -13,6 +13,7 @@
     -ms-flex-align: center;
     align-items: center;
     padding: 1em 2em;
+    position: relative;
 
     @include response(md) {
       padding: 1em 4em;
@@ -25,6 +26,7 @@
     &_logo {
       width: 50px;
       cursor: pointer;
+      margin-right: auto;
     }
 
     &_list {
@@ -67,43 +69,60 @@
         }
       }
     }
+    svg {
+      color: color(whitef2);
+      font-size: size(xl);
+      cursor: pointer;
+    }
 
-    &_responsive {
-      position: fixed;
-      bottom: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      background-color: color(blackOpa80);
-      z-index: 20;
-      padding: 1em 2em;
+    svg + svg {
+      margin-left: 1rem;
+      font-size: size(xl);
+    }
+  }
 
-      @include response(md) {
-        padding: 1em 4em;
-      }
+  .navbar_responsive {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: color(blackOpa80);
+    z-index: 20;
+    padding: 1em 2em;
+    translate: -100vw;
+    transition: all 300ms ease-in;
 
-      li {
-        a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          font-size: size(sm);
-          color: color(whitef2);
-          font-family: font(paragraph);
+    @include response(md) {
+      padding: 1em 4em;
+    }
 
-          i {
-            font-size: size(md);
-          }
+    li {
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: size(sm);
+        color: color(whitef2);
+        font-family: font(paragraph);
+
+        i {
+          font-size: size(md);
         }
-        .span_icon {
-          color: color(tertiary);
-        }
       }
-
-      @include response(lg) {
-        display: none;
+      .span_icon {
+        color: color(tertiary);
       }
     }
+
+    @include response(lg) {
+      display: none;
+    }
+  }
+
+  .open {
+    translate: 0;
   }
 }

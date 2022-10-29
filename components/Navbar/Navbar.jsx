@@ -1,15 +1,18 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import Image from 'next/image';
 import styled from '../../styles/Navbar.module.scss';
 import logo from '../../public/logo.svg';
 import { FaLaptopCode, FaHome, FaUser, FaEnvelope } from 'react-icons/fa';
+import { MdMenu, MdClose } from 'react-icons/md';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className={styled.nav}>
       <div className={styled.container}>
         <div className={styled.navbar}>
-          <Link title='To main site' href='/' passHref>
+          <Link title='To main site' href='/'>
             <div className={styled.navbar_logo}>
               <Image src={logo} alt='andrea falzi logo' />
             </div>
@@ -17,57 +20,35 @@ const Navbar = () => {
 
           <ul className={styled.navbar_list}>
             <li>
-              <Link href='/#works' scroll={false}>
-                Works
-              </Link>
+              <Link href='/#hello'>Hello</Link>
             </li>
             <li>
-              <Link href='/#about' scroll={false}>
-                About
-              </Link>
+              <Link href='/#about'>About</Link>
             </li>
             <li>
-              <Link href='/#contact' scroll={false}>
-                Contact
-              </Link>
+              <Link href='/#portfolio'>Portfolio</Link>
+            </li>
+            <li>
+              <Link href='/#contact'>Contact</Link>
+            </li>
+          </ul>
+          {/* <FaEnvelope /> */}
+          {!isOpen ? <MdMenu onClick={() => setIsOpen((prev) => !prev)} /> : <MdClose onClick={() => setIsOpen((prev) => !prev)} />}
+          <ul className={`${styled.navbar_responsive} ${isOpen ? styled.open : ''}`}>
+            <li>
+              <Link href='/#hello'>Hello</Link>
+            </li>
+            <li>
+              <Link href='/#about'>About</Link>
+            </li>
+            <li>
+              <Link href='/#portfolio'>Portfolio</Link>
+            </li>
+            <li>
+              <Link href='/#contact'>Contact</Link>
             </li>
           </ul>
         </div>
-
-        <ul id='navbar-responsive' className={styled.navbar_responsive}>
-          <li>
-            <Link id='bodyNav' className='span-icon' href='/#home' scroll={false}>
-              <>
-                <FaHome />
-                Home
-              </>
-            </Link>
-          </li>
-          <li>
-            <Link id='worksNav' href='/#works' scroll={false}>
-              <>
-                <FaLaptopCode />
-                Works
-              </>
-            </Link>
-          </li>
-          <li>
-            <Link id='aboutNav' href='/#about' scroll={false}>
-              <>
-                <FaUser />
-                About
-              </>
-            </Link>
-          </li>
-          <li>
-            <Link id='contactNav' href='/#contact' scroll={false}>
-              <>
-                <FaEnvelope />
-                Contact
-              </>
-            </Link>
-          </li>
-        </ul>
       </div>
     </nav>
   );
