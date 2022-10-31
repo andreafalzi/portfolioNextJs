@@ -38,10 +38,6 @@
       @include response(md) {
         font-size: size(md);
       }
-
-      @include response(lg) {
-        font-size: size(lg);
-      }
     }
   }
 

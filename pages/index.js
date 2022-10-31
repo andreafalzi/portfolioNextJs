@@ -1,22 +1,23 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import About from '../components/About/About';
-import Expirience from '../components/Expirience/Expirience';
+import Skills from '../components/Skills/Skills';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
 import Projects from '../components/Projects/Projects';
+import ToTop from '../components/ToTop';
 
 export default function Home() {
   return (
     <>
       <Head>
         <meta charSet='UTF-8' />
-        <title>Web Experiences Crafted With Coding Powers</title>
+        <title>{`Andrea's portfolio`}</title>
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width' />
         <meta name='description' content='Personal Porfolio with projects' />
-        <meta property='og:title' content='Web Experiences Crafted With Coding Powers' />
+        <meta property='og:title' content={`Andrea's portfolio`} />
         <meta property='og:description' content='Personal Porfolio with projects' />
         <meta property='og:image' content='https://i.imgur.com/kXH2WFZ.jpg' />
         <meta property='og:url' content='https://andreafalzi.dev' />
@@ -44,9 +45,10 @@ export default function Home() {
         <section id='projects'>
           <Projects />
         </section>
-        <section id='expirience'>
-          <Expirience />
+        <section id='skills'>
+          <Skills />
         </section>
+        <ToTop />
       </main>
       <Footer />
     </>

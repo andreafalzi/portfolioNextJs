@@ -5,44 +5,49 @@
   background-color: color(primary);
   height: 90vh;
   position: relative;
+  padding: 5em 2em;
+
+  @include response(sm) {
+    padding: 5em 8em;
+  }
+
+  @include response(lg) {
+    padding-bottom: 10rem;
+  }
+
+  @include response(xxl) {
+    padding: 5em 0em;
+    background: rgb(23, 28, 34);
+    background: linear-gradient(90deg, rgba(23, 28, 34, 1) 70vw, rgba(42, 216, 131, 1) 70vw);
+  }
 
   .hero {
-    padding: 3em 2em;
     color: color(whitef2);
     display: grid;
-    place-content: center;
-    padding-top: 5em;
-
-    @include response(md) {
-      padding: 3em 4em;
-    }
-
-    @include response(lg) {
-      display: flex;
-      padding: 3em 4em;
-      align-items: flex-start;
-      margin-top: 0;
-      justify-content: space-between;
-    }
-
-    @include response(xxl) {
-      padding: 3em 0em;
-    }
+    height: 100%;
 
     .hero_title {
       text-align: center;
-      display: grid;
-      place-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 2rem;
 
-      @include response(lg) {
+      @include response(xxl) {
         text-align: left;
+        align-items: flex-start;
       }
 
       h3 {
         font-family: font(title);
         text-transform: uppercase;
         line-height: 57px;
+        font-size: 1.4rem;
+
+        @include response(md) {
+          font-size: 2rem;
+        }
       }
 
       h1 {
@@ -53,7 +58,6 @@
 
         @include response(md) {
           font-size: 5rem;
-
           letter-spacing: 0.3rem;
         }
 
@@ -76,6 +80,10 @@
         width: 180px;
         overflow: hidden;
         margin-inline: auto;
+
+        @include response(xxl) {
+          display: none;
+        }
       }
 
       p {
@@ -84,12 +92,14 @@
         font-weight: 300;
         margin-top: 2em;
         color: color(whitef2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         @include response(md) {
-          font-size: size(lg);
+          font-size: size(md);
+        }
+
+        @include response(xxl) {
+          margin-top: 0;
+          width: 40ch;
         }
 
         svg {
@@ -99,40 +109,38 @@
       }
     }
 
-    .hero_social {
-      display: none;
+    a {
+      margin-inline: auto;
 
-      @include response(lg) {
-        display: grid;
-        margin-left: auto;
+      @include response(xxl) {
+        margin-inline: unset;
 
-        li {
-          margin-top: 2.5em;
-
-          a {
-            font-size: 4rem;
-            color: color(whitef2);
-            transition: color 200ms ease-in;
-            position: relative;
-
-            &:hover {
-              color: color(tertiary);
-            }
-
-            p {
-              font-family: font(paragraph);
-              font-size: size(md);
-              position: absolute;
-              top: 50%;
-              left: 0;
-              transform: translateY(-50%);
-              visibility: hidden;
-              opacity: 0;
-              color: color(whitef2);
-              transition: visibility 200ms ease-in, opacity 200ms ease-in, left 200ms ease-in;
-            }
-          }
+        & > button {
+          padding-inline: 3rem;
+          padding-block: 2rem;
+          font-size: 1.8rem;
         }
+      }
+    }
+
+    .scroll_action {
+      margin-top: auto;
+      border-left: 3px solid color(tertiary);
+
+      p {
+        font-family: font(paragraph);
+        color: color(whitef2);
+        margin-left: 1rem;
+        width: 100px;
+        font-size: 1.4rem;
+
+        @include response(md) {
+          font-size: 1.6rem;
+        }
+      }
+
+      @include response(xxl) {
+        margin-left: unset;
       }
     }
   }

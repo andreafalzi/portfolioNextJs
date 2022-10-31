@@ -1,0 +1,62 @@
+@import './index.scss';
+
+.skills {
+  background-color: color(secondary);
+  font-family: font(paragraph);
+  position: relative;
+  padding: 5em 2em;
+  overflow: hidden;
+
+  @include response(sm) {
+    padding: 5em 8em;
+  }
+
+  @include response(lg) {
+    padding: 15em 8em;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: color(whitef2);
+    font-family: font(title);
+    font-size: 1rem;
+
+    @include response(md) {
+      font-size: 1.3rem;
+    }
+  }
+
+  h3.title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: color(tertiary);
+    margin-bottom: 2rem;
+    font-family: font(title);
+
+    @include response(md) {
+      font-size: 6rem;
+    }
+  }
+
+  .skills_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 600px;
+
+    @include response(sm) {
+      padding-top: 2rem;
+      gap: 4rem;
+    }
+
+    .skill_circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      position: relative;
+    }
+  }
+}

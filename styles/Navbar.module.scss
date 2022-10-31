@@ -3,6 +3,12 @@
 /* !!!NAVBAR!!! */
 .nav {
   background-color: color(primary);
+  position: relative;
+
+  @include response(xxl) {
+    background: rgb(23, 28, 34);
+    background: linear-gradient(90deg, rgba(23, 28, 34, 1) 70vw, rgba(42, 216, 131, 1) 70vw);
+  }
 
   .navbar {
     height: 10vh;
@@ -15,12 +21,12 @@
     padding: 1em 2em;
     position: relative;
 
-    @include response(md) {
-      padding: 1em 4em;
+    @include response(sm) {
+      padding: 1em 8em;
     }
 
     @include response(xxl) {
-      padding: 1em 0em;
+      padding: 0em 15em;
     }
 
     &_logo {
@@ -38,7 +44,7 @@
 
         li a {
           position: relative;
-          font-size: size(md);
+          font-size: size(sm);
           font-weight: 900;
           font-family: font(title);
           color: color(whitef2);
@@ -59,6 +65,10 @@
             left: 0;
             transition: width 700ms ease;
             z-index: -1;
+
+            @include response(xxl) {
+              background-color: color(primary);
+            }
           }
 
           &:hover::after {
@@ -73,6 +83,10 @@
       color: color(whitef2);
       font-size: size(xl);
       cursor: pointer;
+
+      @include response(lg) {
+        display: none;
+      }
     }
 
     svg + svg {
@@ -95,8 +109,8 @@
     translate: -100vw;
     transition: all 300ms ease-in;
 
-    @include response(md) {
-      padding: 1em 4em;
+    @include response(sm) {
+      padding: 1em 8em;
     }
 
     li {
@@ -107,10 +121,6 @@
         font-size: size(sm);
         color: color(whitef2);
         font-family: font(paragraph);
-
-        i {
-          font-size: size(md);
-        }
       }
       .span_icon {
         color: color(tertiary);

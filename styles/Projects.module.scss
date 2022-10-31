@@ -1,24 +1,28 @@
 @import './index.scss';
 
-/* !!!SECTION WORKS!!! */
 .projects {
   background-color: color(primary);
   font-family: font(paragraph);
   position: relative;
-  padding: 4em 2em 8em;
+  padding: 5em 2em;
 
-  @include response(md) {
-    padding: 4em 4em 8em;
+  @include response(sm) {
+    padding: 5em 8em;
   }
 
   @include response(lg) {
-    padding: 10em 4em 16em;
+    padding: 15em 8em;
   }
 
   h4 {
     text-transform: uppercase;
     color: color(whitef2);
     font-family: font(title);
+    font-size: 1rem;
+
+    @include response(md) {
+      font-size: 1.3rem;
+    }
   }
 
   h3.title {
@@ -29,8 +33,7 @@
     margin-bottom: 2rem;
 
     @include response(md) {
-      font-size: 8rem;
-      margin-bottom: 2em;
+      font-size: 6rem;
     }
   }
 
@@ -39,6 +42,15 @@
     display: flex;
     justify-content: space-between;
     padding-inline: 2rem;
+
+    @include response(md) {
+      gap: 3rem;
+      padding-inline: 6rem;
+    }
+    @include response(lg) {
+      max-width: 600px;
+      margin-inline: auto;
+    }
 
     .filter_item {
       color: color(whitef2);
@@ -58,65 +70,36 @@
     }
   }
 
+  /* Works on Firefox */
   .project_list {
     margin-top: 3rem;
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    // gap: 3rem;
+    padding-bottom: 3rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(126, 126, 126) #494949;
 
-    .project_item {
-      background-color: color(secondary);
-      min-height: 400px;
-      width: 300px;
-      padding: 2rem;
-      border-radius: 10px;
-      .project_image {
-        position: relative;
-        width: 100%;
-        height: 200px;
-      }
-
-      .project_hover {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        margin-top: 2rem;
-
-        .project_link {
-          color: color(whitef2);
-          font-size: 3rem;
-          cursor: pointer;
-        }
-      }
-
-      .project_content {
-        position: relative;
-
-        .project_title {
-          font-size: size(sm);
-          margin-block: 2rem;
-        }
-        .project_text {
-          color: color(whitef2);
-          font-family: font(paragraph);
-          font-size: 1.3rem;
-        }
-
-        .project_tag {
-          background-color: color(secondary);
-          position: absolute;
-          padding: 0.5rem 1rem;
-          border-radius: 10px;
-          top: -40px;
-          left: 50%;
-          translate: -50% 0;
-
-          p {
-            color: color(whitef2);
-            font-size: 1.2rem;
-          }
-        }
-      }
+    @include response(xl) {
+      justify-content: center;
+      flex-wrap: wrap;
     }
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  .project_list::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+  }
+
+  .project_list::-webkit-scrollbar-track {
+    background: #eaeaea;
+  }
+
+  .project_list::-webkit-scrollbar-thumb {
+    background-color: rgb(126, 126, 126);
+    /* border-radius: 20px;
+    border: 3px solid #333; */
   }
 }
