@@ -1,0 +1,25 @@
+@import './index.scss';
+
+.btn {
+  font-family: font(paragraph);
+  width: fit-content;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background-color: color(primary);
+  color: color(whitef2);
+  border: 1px solid color(whitef2);
+}
+
+.invertedBtn {
+  background-color: color(tertiary);
+  color: color(black333);
+  border: 1px solid color(tertiary);
+}

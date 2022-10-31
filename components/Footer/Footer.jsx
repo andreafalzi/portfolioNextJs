@@ -23,16 +23,6 @@ const Footer = () => {
                 <FaGithub /> Github
               </a>
             </li>
-            <li>
-              <a href='https://codepen.io/andreafalzi' target='_blank' rel='noreferrer' aria-label='Codepen'>
-                <FaCodepen /> Codepen
-              </a>
-            </li>
-            <li>
-              <a href='https://twitter.com/andrea_falzi' target='_blank' rel='noreferrer' aria-label='Twitter'>
-                <FaTwitter /> Twitter
-              </a>
-            </li>
           </ul>
         </div>
         <div className={styled.copy}>

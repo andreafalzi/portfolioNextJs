@@ -2,7 +2,7 @@
 
 /* !!!SECTION ABOUT!!! */
 .about {
-  background-color: color(primary);
+  background-color: color(secondary);
   color: color(whitef2);
   position: relative;
   font-family: font(paragraph);
@@ -16,104 +16,44 @@
     padding: 10em 4em 16em;
   }
 
-  h3.title {
-    font-size: 6rem;
-    font-weight: 700;
-    text-align: center;
-    font-family: font(title);
-    isolation: isolate;
+  h4 {
+    text-transform: uppercase;
     color: color(whitef2);
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2em;
+    font-family: font(title);
+  }
+
+  h3.title {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: font(title);
+    color: color(tertiary);
+    margin-bottom: 2rem;
 
     @include response(md) {
       font-size: 8rem;
       margin-bottom: 2em;
     }
+  }
 
-    &::before {
-      content: 'About';
-      transform: scale(3);
-      font-weight: 700;
-      font-size: 3rem;
-      position: absolute;
-      color: color(lightOpacity);
-      padding-top: 4rem;
-      z-index: -1;
+  h5 {
+    color: color(whitef2);
+    font-family: font(title);
+    font-size: size(md);
+    margin-bottom: 1.5rem;
 
-      @include response(md) {
-        transform: scale(4);
-      }
+    &:last-of-type {
+      margin-top: 2rem;
     }
   }
 
-  .about_content {
-    margin-top: 40px;
-    position: relative;
-
-    @include response(md) {
-      margin-top: 100px;
-    }
-
-    @include response(lg) {
-      display: flex;
-    }
-
-    .left {
-      width: 100%;
-
-      @include response(lg) {
-        width: 50%;
-      }
-
-      p {
-        font-size: size(sm);
-      }
-    }
-
-    .center {
-      display: none;
-
-      @include response(lg) {
-        display: unset;
-        // margin-left: 50em;
-        width: 50%;
-        margin: 10em 2em auto 0;
-        transform: rotate(339deg);
-      }
-    }
-
-    .right {
-      display: none;
-
-      @include response(lg) {
-        display: unset;
-        // margin-left: 50em;
-        // width: 50%;
-
-        .blend_effect::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background-color: rgb(0, 0, 0);
-          mix-blend-mode: saturation;
-          width: inherit;
-          height: inherit;
-          z-index: 1;
-        }
-
-        img {
-          border-radius: 5px;
-          // width: 100%;
-          // height: 100%;
-        }
-      }
-    }
+  p {
+    color: color(whitef2);
+    font-family: font(paragraph);
+    font-size: 1.4rem;
   }
-}
 
-.about_cards {
-  display: grid;
-  grid-gap: 1rem;
+  a {
+    display: block;
+    margin-top: 2rem;
+  }
 }

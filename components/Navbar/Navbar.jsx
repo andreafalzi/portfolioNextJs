@@ -20,32 +20,32 @@ const Navbar = () => {
 
           <ul className={styled.navbar_list}>
             <li>
-              <Link href='/#hello'>Hello</Link>
+              <Link href='#hello'>Hello</Link>
             </li>
             <li>
-              <Link href='/#about'>About</Link>
+              <Link href='#about'>About</Link>
             </li>
             <li>
-              <Link href='/#portfolio'>Portfolio</Link>
+              <Link href='#projects'>Projects</Link>
             </li>
             <li>
-              <Link href='/#contact'>Contact</Link>
+              <Link href='#contact'>Contact</Link>
             </li>
           </ul>
           {/* <FaEnvelope /> */}
           {!isOpen ? <MdMenu onClick={() => setIsOpen((prev) => !prev)} /> : <MdClose onClick={() => setIsOpen((prev) => !prev)} />}
           <ul className={`${styled.navbar_responsive} ${isOpen ? styled.open : ''}`}>
             <li>
-              <Link href='/#hello'>Hello</Link>
+              <Link href='#hello'>Hello</Link>
             </li>
             <li>
-              <Link href='/#about'>About</Link>
+              <Link href='#about'>About</Link>
             </li>
             <li>
-              <Link href='/#portfolio'>Portfolio</Link>
+              <Link href='#projects'>Projects</Link>
             </li>
             <li>
-              <Link href='/#contact'>Contact</Link>
+              <Link href='#contact'>Contact</Link>
             </li>
           </ul>
         </div>

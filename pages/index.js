@@ -5,13 +5,13 @@ import Expirience from '../components/Expirience/Expirience';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
-import Works from '../components/Works/Works';
+import Projects from '../components/Projects/Projects';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <meta charset='UTF-8' />
+        <meta charSet='UTF-8' />
         <title>Web Experiences Crafted With Coding Powers</title>
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width' />
@@ -38,11 +38,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Header />
-        <section id='works'>
-          <Works />
-        </section>
         <section id='about'>
           <About />
+        </section>
+        <section id='projects'>
+          <Projects />
         </section>
         <section id='expirience'>
           <Expirience />
