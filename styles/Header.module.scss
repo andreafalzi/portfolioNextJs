@@ -6,6 +6,9 @@
   height: 90vh;
   position: relative;
   padding: 5em 2em;
+  isolation: isolate;
+  overflow: hidden;
+  z-index: 2;
 
   @include response(sm) {
     padding: 5em 8em;
@@ -16,15 +19,20 @@
   }
 
   @include response(xxl) {
-    padding: 5em 0em;
+    padding: 5em 15em;
     background: rgb(23, 28, 34);
-    background: linear-gradient(90deg, rgba(23, 28, 34, 1) 70vw, rgba(42, 216, 131, 1) 70vw);
+    // background: linear-gradient(90deg, rgba(23, 28, 34, 1) 80vw, #20272f 80vw);
+    display: flex;
   }
 
   .hero {
     color: color(whitef2);
     display: grid;
     height: 100%;
+
+    @include response(xxl) {
+      width: 100%;
+    }
 
     .hero_title {
       text-align: center;
@@ -111,6 +119,8 @@
 
     a {
       margin-inline: auto;
+      width: fit-content;
+      height: fit-content;
 
       @include response(xxl) {
         margin-inline: unset;
@@ -141,6 +151,134 @@
 
       @include response(xxl) {
         margin-left: unset;
+      }
+    }
+  }
+
+  .personal_hero {
+    display: none;
+
+    @include response(xxl) {
+      display: block;
+      position: absolute;
+      width: 650px;
+      height: 100%;
+      top: 0;
+      right: 20%;
+    }
+  }
+
+  .shaper {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -300px;
+    z-index: -1;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: circle(50% at 50% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
+      width: 600px;
+      background-color: gray;
+
+      .inside {
+        clip-path: circle(50% at 50% 50%);
+        height: 595px;
+        width: 595px;
+        background-color: color(primary);
+      }
+    }
+  }
+
+  .shaperTwo {
+    display: none;
+    position: absolute;
+    bottom: -300px;
+    right: 100px;
+    z-index: -1;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
+      width: 600px;
+      background-color: gray;
+
+      .inside {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        height: 595px;
+        width: 595px;
+        background-color: color(primary);
+      }
+    }
+  }
+
+  .shaperThree {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -150px;
+    z-index: -1;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      width: 300px;
+      background-color: gray;
+
+      .inside {
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 1% 100%, 26% 50%, 1% 0%);
+        height: 295px;
+        width: 295px;
+        background-color: color(primary);
+      }
+    }
+  }
+  .shaperFour {
+    display: none;
+    position: absolute;
+    bottom: -50px;
+    left: -100px;
+    z-index: -1;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      width: 300px;
+      background-color: gray;
+
+      .inside {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        height: 295px;
+        width: 295px;
+        background-color: color(primary);
       }
     }
   }

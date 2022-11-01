@@ -5,6 +5,7 @@
   font-family: font(paragraph);
   position: relative;
   padding: 5em 2em;
+  isolation: isolate;
 
   @include response(sm) {
     padding: 5em 8em;
@@ -12,6 +13,10 @@
 
   @include response(lg) {
     padding: 15em 8em;
+  }
+
+  @include response(xxl) {
+    padding: 15em 15em;
   }
 
   h4 {
@@ -38,35 +43,55 @@
   }
 
   .projects_filter {
-    background-color: color(secondary);
+    // background-color: color(secondary);
     display: flex;
-    justify-content: space-between;
-    padding-inline: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    // justify-content: space-between;
+    // padding-inline: 2rem;
 
     @include response(md) {
       gap: 3rem;
       padding-inline: 6rem;
     }
     @include response(lg) {
-      max-width: 600px;
+      flex-wrap: unset;
+      max-width: 800px;
       margin-inline: auto;
+      background-color: color(secondary);
+      justify-content: space-between;
     }
 
     .filter_item {
+      background-color: color(secondary);
       color: color(whitef2);
       font-family: font(title);
       font-size: 1.3rem;
       font-weight: 700;
-      padding-block: 2rem;
+      padding-block: 1rem;
+      padding-inline: 2rem;
+      border-radius: 25px;
       cursor: pointer;
 
+      @include response(lg) {
+        padding-block: 2rem;
+        padding-inline: unset;
+        border-radius: unset;
+      }
+
       &:hover {
-        border-bottom: 2px solid color(tertiary);
+        @include response(lg) {
+          border-bottom: 2px solid color(tertiary);
+        }
       }
     }
 
     .active {
-      border-bottom: 2px solid color(tertiary);
+      background-color: color(tertiary);
+      @include response(lg) {
+        background-color: unset;
+        border-bottom: 2px solid color(tertiary);
+      }
     }
   }
 
@@ -82,8 +107,8 @@
     scrollbar-color: rgb(126, 126, 126) #494949;
 
     @include response(xl) {
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
   }
 
@@ -101,5 +126,35 @@
     background-color: rgb(126, 126, 126);
     /* border-radius: 20px;
     border: 3px solid #333; */
+  }
+
+  .shaperOne {
+    display: none;
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    z-index: -1;
+    rotate: 180deg;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      width: 300px;
+      background-color: gray;
+
+      .inside {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        height: 295px;
+        width: 295px;
+        background-color: color(primary);
+      }
+    }
   }
 }

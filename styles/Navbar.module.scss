@@ -7,7 +7,7 @@
 
   @include response(xxl) {
     background: rgb(23, 28, 34);
-    background: linear-gradient(90deg, rgba(23, 28, 34, 1) 70vw, rgba(42, 216, 131, 1) 70vw);
+    // background: linear-gradient(90deg, rgba(23, 28, 34, 1) 80vw, #20272f 80vw);
   }
 
   .navbar {
@@ -33,6 +33,10 @@
       width: 50px;
       cursor: pointer;
       margin-right: auto;
+
+      @include response(xxl) {
+        width: 80px;
+      }
     }
 
     &_list {
@@ -40,7 +44,6 @@
 
       @include response(lg) {
         display: flex;
-        margin-left: auto;
 
         li a {
           position: relative;
@@ -54,6 +57,10 @@
           text-transform: uppercase;
           isolation: isolate;
 
+          @include response(xxl) {
+            font-size: size(md);
+          }
+
           &::after {
             content: '';
             width: 20px;
@@ -65,10 +72,6 @@
             left: 0;
             transition: width 700ms ease;
             z-index: -1;
-
-            @include response(xxl) {
-              background-color: color(primary);
-            }
           }
 
           &:hover::after {
@@ -83,15 +86,20 @@
       color: color(whitef2);
       font-size: size(xl);
       cursor: pointer;
+      order: 2;
+      margin-left: 2rem;
 
       @include response(lg) {
         display: none;
       }
     }
 
-    svg + svg {
-      margin-left: 1rem;
-      font-size: size(xl);
+    .mail_link {
+      order: 1;
+
+      @include response(lg) {
+        margin-left: auto;
+      }
     }
   }
 
@@ -121,9 +129,6 @@
         font-size: size(sm);
         color: color(whitef2);
         font-family: font(paragraph);
-      }
-      .span_icon {
-        color: color(tertiary);
       }
     }
 

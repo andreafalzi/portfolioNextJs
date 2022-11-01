@@ -1,7 +1,8 @@
 import styled from '../../styles/Header.module.scss';
-import { FaLinkedinIn, FaGithub, FaCodepen, FaTwitter, FaHandshake, FaChevronDown } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import profileImg from '../../public/assets/AFimg.jpg';
+import personalHero from '../../public/assets/standingMe2.png';
 import Button from '../Button';
 
 const Header = () => {
@@ -26,6 +27,30 @@ const Header = () => {
         </a>
         <div className={styled.scroll_action}>
           <p>Scroll down for more</p>
+        </div>
+      </div>
+      <div className={styled.personal_hero}>
+        <Image src={personalHero} alt='full picture of me' layout='fill' objectFit='contain' priority={true} />
+      </div>
+
+      <div className={styled.shaper}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
+        </div>
+      </div>
+      <div className={styled.shaperTwo}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
+        </div>
+      </div>
+      <div className={styled.shaperThree}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
+        </div>
+      </div>
+      <div className={styled.shaperFour}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
         </div>
       </div>
     </header>

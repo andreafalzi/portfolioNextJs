@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styled from '../../styles/Navbar.module.scss';
 import logo from '../../public/logo.svg';
 import { MdMenu, MdClose } from 'react-icons/md';
+import Button from '../Button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,9 @@ const Navbar = () => {
             <a href='#skills'>Skills</a>
           </li>
         </ul>
+        <a href='mailto:af@andreafalzi.dev' className={styled.mail_link}>
+          <Button>{`Let's talk`}</Button>
+        </a>
       </div>
     </nav>
   );

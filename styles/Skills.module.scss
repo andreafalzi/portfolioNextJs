@@ -15,6 +15,10 @@
     padding: 15em 8em;
   }
 
+  @include response(xxl) {
+    padding: 15em 15em;
+  }
+
   h4 {
     text-transform: uppercase;
     color: color(whitef2);
@@ -42,11 +46,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    max-width: 600px;
 
     @include response(sm) {
       padding-top: 2rem;
       gap: 4rem;
+    }
+    @include response(lg) {
+      max-width: 600px;
+    }
+    @include response(xxl) {
+      max-width: 450px;
     }
 
     .skill_circle {
@@ -57,6 +66,17 @@
       width: 50px;
       border-radius: 50%;
       position: relative;
+    }
+  }
+
+  .gif {
+    display: none;
+
+    @include response(xxl) {
+      display: block;
+      position: absolute;
+      top: -10%;
+      right: 15vw;
     }
   }
 }

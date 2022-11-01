@@ -36,7 +36,7 @@ const Projects = () => {
         <h4>List of my latest works</h4>
         <h3 className={styled.title}>Projects</h3>
         <div className={styled.projects_filter}>
-          {['All', 'WebApp', 'React', 'Next JS', 'Vanilla JS'].map((item, index) => (
+          {['All', 'WebApp', 'React', 'Next JS', 'Vanilla JS', 'HTML', 'SASS'].map((item, index) => (
             <div key={index} onClick={() => handleProjectsFilter(item)} className={`${styled.filter_item} ${activeFilter === item ? styled.active : ''}`}>
               {item}
             </div>
@@ -47,6 +47,11 @@ const Projects = () => {
             <ProjectCard project={project} key={index} />
           ))}
         </motion.div>
+      </div>
+      <div className={styled.shaperOne}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
+        </div>
       </div>
     </div>
   );

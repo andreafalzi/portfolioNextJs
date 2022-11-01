@@ -9,6 +9,11 @@
   display: flex;
   flex-direction: column;
 
+  @include response(xl) {
+    width: 400px;
+    margin-inline: auto;
+  }
+
   .project_image {
     position: relative;
     width: 100%;
@@ -25,6 +30,12 @@
       color: color(whitef2);
       font-size: 3rem;
       cursor: pointer;
+      transition: all 300ms ease-in;
+
+      &:hover {
+        scale: 1.1;
+        color: color(tertiary);
+      }
     }
   }
 

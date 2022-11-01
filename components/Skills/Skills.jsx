@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import laptop from '../../public/assets/laptop.gif';
 import { skillsData } from '../../constants/data';
 import styled from '../../styles/Skills.module.scss';
 
@@ -15,6 +16,9 @@ const Skills = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className={styled.gif}>
+        <Image src={laptop} alt='laptop' />
       </div>
     </div>
   );

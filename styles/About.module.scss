@@ -7,6 +7,8 @@
   position: relative;
   font-family: font(paragraph);
   padding: 5em 2em;
+  isolation: isolate;
+  z-index: 1;
 
   @include response(sm) {
     padding: 5em 8em;
@@ -14,6 +16,9 @@
 
   @include response(lg) {
     padding: 15em 8em;
+  }
+  @include response(xxl) {
+    padding: 15em 15em;
   }
 
   h4 {
@@ -84,6 +89,65 @@
 
       a {
         display: block;
+      }
+    }
+  }
+
+  .shaperTwo {
+    display: none;
+    position: absolute;
+    top: -300px;
+    right: 100px;
+    z-index: -1;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
+      width: 600px;
+      background-color: gray;
+
+      .inside {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        height: 595px;
+        width: 595px;
+        background-color: color(secondary);
+      }
+    }
+  }
+
+  .shaperOne {
+    display: none;
+    position: absolute;
+    bottom: -200px;
+    right: 50px;
+    z-index: -1;
+    rotate: 180deg;
+
+    @include response(xxl) {
+      display: block;
+    }
+
+    .outside {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      width: 300px;
+      background-color: gray;
+
+      .inside {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        height: 295px;
+        width: 295px;
+        background-color: color(secondary);
       }
     }
   }

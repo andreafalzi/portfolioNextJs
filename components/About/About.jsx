@@ -27,6 +27,16 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div className={styled.shaperTwo}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
+        </div>
+      </div>
+      <div className={styled.shaperOne}>
+        <div className={styled.outside}>
+          <div className={styled.inside}></div>
+        </div>
+      </div>
     </div>
   );
 };
