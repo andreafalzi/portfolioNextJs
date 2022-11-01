@@ -24,6 +24,14 @@ export const projectsData = [
     link: 'https://gastropub.andreafalzi.dev',
   },
   {
+    title: 'Crwn Clothing',
+    image: '/assets/projects/crwn.jpg',
+    description: 'E-commerce concept about clothes and accessories developed in React. Data and login are managed by Firebase',
+    tags: ['React', 'Functional Components', 'Routing', 'SASS', 'All'],
+    git: 'https://github.com/andreafalzi/crwn-clothing',
+    link: 'https://crwn.andreafalzi.dev/',
+  },
+  {
     title: 'Beer Pog',
     image: '/assets/projects/beerpog.jpg',
     description: 'Webapp concept to track how much beer you drink at night with friends. After entering how many beers the app will tell you if it is safe to drive or if it is better to call a taxi.',
