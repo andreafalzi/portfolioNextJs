@@ -56,6 +56,7 @@
     }
     @include response(xxl) {
       max-width: 450px;
+      margin-left: 5rem;
     }
 
     .skill_circle {
@@ -75,8 +76,10 @@
     @include response(xxl) {
       display: block;
       position: absolute;
-      top: -10%;
+      top: 50%;
+      translate: 0 -50%;
       right: 15vw;
+      width: 400px;
     }
   }
 }

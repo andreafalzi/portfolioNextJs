@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { projectsData } from '../../constants/data';
-import Image from 'next/image';
-import { IoMdGlobe, IoLogoGithub } from 'react-icons/io';
 import styled from '../../styles/Projects.module.scss';
 import ProjectCard from '../ProjectCard';
 

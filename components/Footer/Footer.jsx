@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FaLinkedin, FaGithub, FaCodepen, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import logo from '../../public/logo.svg';
 import styled from '../../styles/Footer.module.scss';
 

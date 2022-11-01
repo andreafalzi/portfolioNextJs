@@ -1,15 +1,31 @@
-import styled from '../../styles/Header.module.scss';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import profileImg from '../../public/assets/AFimg.jpg';
 import personalHero from '../../public/assets/standingMe2.png';
 import Button from '../Button';
+import { motion } from 'framer-motion';
+import styled from '../../styles/Header.module.scss';
 
 const Header = () => {
+  const opacitySlideContainer = {
+    hidden: { opacity: 0, x: '-100px' },
+    visible: {
+      opacity: 1,
+      x: '0',
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const opacitySlideItem = {
+    hidden: { opacity: 0, x: '-100px' },
+    visible: { opacity: 1, x: '0' },
+  };
+
   return (
-    <header className={styled.header}>
+    <motion.header className={styled.header} variants={opacitySlideContainer} initial='hidden' animate='visible'>
       <div className={`${styled.container} ${styled.hero}`}>
-        <div className={styled.hero_title}>
+        <motion.div className={styled.hero_title} variants={opacitySlideItem}>
           <h3>{`Hello, I'm a`}</h3>
           <h1>
             <span>
@@ -21,13 +37,13 @@ const Header = () => {
             <Image src={profileImg} alt='andrea falzi personal' />
           </div>
           <p>Hi, my name is Andrea Falzi, dedicated and enthusiastic Frontend/Web Developer.</p>
-        </div>
-        <a href='#projects'>
+        </motion.div>
+        <motion.a href='#projects' variants={opacitySlideItem}>
           <Button btnStyle='invertedBtn'>View my Projects</Button>
-        </a>
-        <div className={styled.scroll_action}>
+        </motion.a>
+        <motion.div className={styled.scroll_action} variants={opacitySlideItem}>
           <p>Scroll down for more</p>
-        </div>
+        </motion.div>
       </div>
       <div className={styled.personal_hero}>
         <Image src={personalHero} alt='full picture of me' layout='fill' objectFit='contain' priority={true} />
@@ -53,7 +69,7 @@ const Header = () => {
           <div className={styled.inside}></div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
