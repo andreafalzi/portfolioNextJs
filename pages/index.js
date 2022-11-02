@@ -21,9 +21,9 @@ export default function Home() {
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width' />
         <meta name='description' content='Personal Porfolio with projects' />
-        <meta property='og:title' content={`Andrea's portfolio`} />
+        <meta property='og:title' content={`Personal portfolio built with Next JS framework, where I show my projects and describe a little about myself and my passion for web development. The projects are made in React, Next Js, Vanilla JS. They are all concepts but all are live and you can also view my code through my github repositories.`} />
         <meta property='og:description' content='Personal Porfolio with projects' />
-        <meta property='og:image' content='https://i.imgur.com/kXH2WFZ.jpg' />
+        <meta property='og:image' content='https://i.imgur.com/tyKxOHC.jpg' />
         <meta property='og:url' content='https://andreafalzi.dev' />
         <meta property='og:type' content='website' />
         <meta property='og:locale' content='en_GB' />
