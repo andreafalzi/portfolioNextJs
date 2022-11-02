@@ -5,7 +5,7 @@ import Button from '../Button';
 import { motion } from 'framer-motion';
 import styled from '../../styles/Header.module.scss';
 
-const Header = () => {
+const Header = ({ refValues }) => {
   const opacitySlideContainer = {
     hidden: { opacity: 0, x: '-100px' },
     visible: {
@@ -38,7 +38,7 @@ const Header = () => {
           </div>
           <p>Hi, my name is Andrea Falzi, dedicated and enthusiastic Frontend/Web Developer.</p>
         </motion.div>
-        <motion.a href='#projects' variants={opacitySlideItem}>
+        <motion.a onClick={() => refValues.current.scrollIntoView()} variants={opacitySlideItem}>
           <Button btnStyle='invertedBtn'>View my Projects</Button>
         </motion.a>
         <motion.div className={styled.scroll_action} variants={opacitySlideItem}>

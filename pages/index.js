@@ -42,7 +42,7 @@ export default function Home() {
       </Script>
       <Navbar refValues={{ scrollToAboutRef, scrollToProjectsRef, scrollToSkillsRef }} />
       <main>
-        <Header />
+        <Header refValues={scrollToProjectsRef} />
         <section ref={scrollToAboutRef}>
           <About />
         </section>
