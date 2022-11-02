@@ -4,8 +4,11 @@ import Image from 'next/image';
 import aboutImage from '../../public/assets/aboutMe.jpg';
 import { motion } from 'framer-motion';
 import styled from '../../styles/About.module.scss';
+import { MdPlayArrow } from 'react-icons/md';
+import { useState } from 'react';
 
 const About = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={styled.about}>
       <div className={styled.container}>
@@ -26,9 +29,14 @@ const About = () => {
                 <p>{data.text}</p>
               </motion.div>
             ))}
-            <a href='https://drive.google.com/file/d/1hGvqBdknYoymfF6Hzc2vepMpoKQn0QXE/view?usp=share_link' target='_blank' rel='noreferrer'>
-              <Button>Download CV</Button>
-            </a>
+            <div className={styled.resume_box}>
+              <a href='https://drive.google.com/file/d/10wLlGO2vyBjhsLb-TBI-0VhmnkG9na1w/view?usp=share_link' target='_blank' rel='noreferrer'>
+                <Button>English cv</Button>
+              </a>
+              <a href='https://drive.google.com/file/d/1hBb7X3bkYJ2g7zuFqtOALtxDqJldgiF1/view?usp=share_link' target='_blank' rel='noreferrer'>
+                <Button>Dansk cv</Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
