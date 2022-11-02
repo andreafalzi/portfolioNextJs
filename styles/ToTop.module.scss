@@ -11,10 +11,10 @@
   z-index: 10;
   display: grid;
   place-content: center;
+  cursor: pointer;
 
   svg {
     color: color(whitef2);
     font-size: 3rem;
-    cursor: pointer;
   }
 }

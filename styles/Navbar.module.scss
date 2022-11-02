@@ -46,6 +46,7 @@
         display: flex;
 
         li a {
+          cursor: pointer;
           position: relative;
           font-size: size(sm);
           font-weight: 900;
@@ -108,8 +109,9 @@
     left: 0;
     top: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 4rem;
     width: 100%;
     background-color: color(secondary);
     z-index: 20;
@@ -120,12 +122,13 @@
     @include response(sm) {
       padding: 1em 8em;
     }
+    @include response(md) {
+      gap: 8rem;
+    }
 
     li {
       a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        cursor: pointer;
         font-size: size(sm);
         color: color(whitef2);
         font-family: font(paragraph);

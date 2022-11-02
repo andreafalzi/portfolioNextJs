@@ -7,8 +7,12 @@ import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
 import Projects from '../components/Projects/Projects';
 import ToTop from '../components/ToTop';
+import { useRef } from 'react';
 
 export default function Home() {
+  const scrollToAboutRef = useRef();
+  const scrollToProjectsRef = useRef();
+  const scrollToSkillsRef = useRef();
   return (
     <>
       <Head>
@@ -36,16 +40,16 @@ export default function Home() {
           gtag('config', 'G-HH5V09JJQQ');
         `}
       </Script>
-      <Navbar />
+      <Navbar refValues={{ scrollToAboutRef, scrollToProjectsRef, scrollToSkillsRef }} />
       <main>
         <Header />
-        <section id='about'>
+        <section ref={scrollToAboutRef}>
           <About />
         </section>
-        <section id='projects'>
+        <section ref={scrollToProjectsRef}>
           <Projects />
         </section>
-        <section id='skills'>
+        <section ref={scrollToSkillsRef}>
           <Skills />
         </section>
         <ToTop />

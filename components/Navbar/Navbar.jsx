@@ -6,8 +6,9 @@ import logo from '../../public/logo.svg';
 import { MdMenu, MdClose } from 'react-icons/md';
 import Button from '../Button';
 
-const Navbar = () => {
+const Navbar = ({ refValues }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollToAboutRef, scrollToProjectsRef, scrollToSkillsRef } = refValues;
   return (
     <nav className={styled.nav}>
       <div className={styled.navbar}>
@@ -18,27 +19,27 @@ const Navbar = () => {
         </Link>
 
         <ul className={styled.navbar_list}>
-          <li>
-            <a href='#about'>About</a>
+          <li onClick={() => scrollToAboutRef.current.scrollIntoView()}>
+            <a>About</a>
           </li>
-          <li>
-            <a href='#projects'>Projects</a>
+          <li onClick={() => scrollToProjectsRef.current.scrollIntoView()}>
+            <a>Projects</a>
           </li>
-          <li>
-            <a href='#skills'>Skills</a>
+          <li onClick={() => scrollToSkillsRef.current.scrollIntoView()}>
+            <a>Skills</a>
           </li>
         </ul>
         {/* <FaEnvelope /> */}
         {!isOpen ? <MdMenu onClick={() => setIsOpen((prev) => !prev)} /> : <MdClose onClick={() => setIsOpen((prev) => !prev)} />}
         <ul className={`${styled.navbar_responsive} ${isOpen ? styled.open : ''}`}>
           <li onClick={() => setIsOpen((prev) => !prev)}>
-            <a href='#about'>About</a>
+            <a onClick={() => scrollToAboutRef.current.scrollIntoView()}>About</a>
           </li>
           <li onClick={() => setIsOpen((prev) => !prev)}>
-            <a href='#projects'>Projects</a>
+            <a onClick={() => scrollToProjectsRef.current.scrollIntoView()}>Projects</a>
           </li>
           <li onClick={() => setIsOpen((prev) => !prev)}>
-            <a href='#skills'>Skills</a>
+            <a onClick={() => scrollToSkillsRef.current.scrollIntoView()}>Skills</a>
           </li>
         </ul>
         <a href='mailto:af@andreafalzi.dev' className={styled.mail_link}>

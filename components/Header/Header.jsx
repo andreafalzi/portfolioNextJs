@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import profileImg from '../../public/assets/AFimg.jpg';
+import profileImg from '../../public/assets/afhead.jpg';
 import personalHero from '../../public/assets/standingMe2.png';
 import Button from '../Button';
 import { motion } from 'framer-motion';
@@ -34,7 +34,7 @@ const Header = () => {
             Web Developer
           </h1>
           <div className={styled.hero_image}>
-            <Image src={profileImg} alt='andrea falzi personal' />
+            <Image src={profileImg} alt='andrea falzi personal' layout='fill' objectFit='cover' />
           </div>
           <p>Hi, my name is Andrea Falzi, dedicated and enthusiastic Frontend/Web Developer.</p>
         </motion.div>
