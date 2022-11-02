@@ -45,9 +45,9 @@ const Header = ({ refValues }) => {
           <p>Scroll down for more</p>
         </motion.div>
       </div>
-      <div className={styled.personal_hero}>
+      <motion.div className={styled.personal_hero} variants={opacitySlideItem}>
         <Image src={personalHero} alt='full picture of me' layout='fill' objectFit='contain' priority={true} />
-      </div>
+      </motion.div>
 
       <div className={styled.shaper}>
         <div className={styled.outside}>
