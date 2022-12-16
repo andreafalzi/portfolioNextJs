@@ -1,13 +1,14 @@
 @import './index.scss';
 
 .project_item {
-  // background-color: color(secondary);
+  background-color: color(secondary);
   width: 270px;
   padding: 2rem;
   flex-shrink: 0;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 
   @include response(xl) {
     width: 400px;
@@ -18,6 +19,8 @@
     position: relative;
     width: 100%;
     height: 200px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
   }
 
   .project_hover {

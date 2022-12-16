@@ -5,9 +5,9 @@ import { IoLogoGithub, IoMdGlobe } from 'react-icons/io';
 const ProjectCard = ({ project }) => {
   return (
     <div className={styled.project_item}>
-      <div className={styled.project_image}>
+      <a className={styled.project_image} href={project.link} target='_blank' rel='noopener noreferrer'>
         <Image src={project.image} alt={project.title} layout='fill' objectFit='cover' />
-      </div>
+      </a>
       <div className={styled.project_content}>
         <h4 className={styled.project_title}>{project.title}</h4>
         <p className={styled.project_text}>{project.description}</p>

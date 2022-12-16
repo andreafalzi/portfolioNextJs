@@ -30,10 +30,10 @@ const About = () => {
               </motion.div>
             ))}
             <div className={styled.resume_box}>
-              <a href='https://drive.google.com/file/d/1YN2_wFSCVVu4yYZWxbYOwVCv2fF2f_8h/view?usp=share_link' target='_blank' rel='noreferrer'>
+              <a href='https://drive.google.com/file/d/1zNaWwiBewaVr9Thpe0sqsTOe7mLJiBVB/view?usp=share_link' target='_blank' rel='noreferrer'>
                 <Button>English cv</Button>
               </a>
-              <a href='https://drive.google.com/file/d/1_lF1VNHEAZiHi2qzceKX3ReSF4GmefYP/view?usp=share_link' target='_blank' rel='noreferrer'>
+              <a href='https://drive.google.com/file/d/1BT_kAvM_d4ga0TVWPSQn7P0meRgDcgG6/view?usp=share_link' target='_blank' rel='noreferrer'>
                 <Button>Dansk cv</Button>
               </a>
             </div>
