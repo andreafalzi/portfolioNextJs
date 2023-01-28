@@ -101,12 +101,13 @@
     display: flex;
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
-    row-gap: 3rem;
+    gap: 2rem;
     padding-bottom: 3rem;
     scrollbar-width: thin;
     scrollbar-color: rgb(126, 126, 126) #494949;
 
     @include response(xl) {
+      row-gap: 3rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }

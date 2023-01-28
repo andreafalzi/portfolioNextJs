@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import profileImg from '../../public/assets/afhead.jpg';
 import personalHero from '../../public/assets/standingMe2.png';
@@ -6,6 +7,15 @@ import { motion } from 'framer-motion';
 import styled from '../../styles/Header.module.scss';
 
 const Header = ({ refValues }) => {
+  //bug fix big image glitch on Devices < 1366px
+  const [windowSize, setWindowSize] = useState(0);
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
+
+  const isMobile = windowSize < 1366;
+
   const opacitySlideContainer = {
     hidden: { opacity: 0, x: '-100px' },
     visible: {
@@ -17,6 +27,7 @@ const Header = ({ refValues }) => {
       },
     },
   };
+
   const opacitySlideItem = {
     hidden: { opacity: 0, x: '-100px' },
     visible: { opacity: 1, x: '0' },
@@ -34,7 +45,7 @@ const Header = ({ refValues }) => {
             Web Developer
           </h1>
           <div className={styled.hero_image}>
-            <Image src={profileImg} alt='andrea falzi personal' layout='fill' objectFit='cover' />
+            <Image src={profileImg} alt='andrea falzi personal' layout='fill' objectFit='cover' priority={true} />
           </div>
           <p>Hi, my name is Andrea Falzi, dedicated and enthusiastic Frontend/Web Developer.</p>
         </motion.div>
@@ -45,9 +56,11 @@ const Header = ({ refValues }) => {
           <p>Scroll down for more</p>
         </motion.div>
       </div>
-      <motion.div className={styled.personal_hero} variants={opacitySlideItem}>
-        <Image src={personalHero} alt='full picture of me' layout='fill' objectFit='contain' priority={true} />
-      </motion.div>
+      {!isMobile && (
+        <motion.div className={styled.personal_hero} variants={opacitySlideItem}>
+          <Image src={personalHero} alt='full picture of me' layout='fill' objectFit='contain' priority={true} />
+        </motion.div>
+      )}
 
       <div className={styled.shaper}>
         <div className={styled.outside}>
