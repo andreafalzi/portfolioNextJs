@@ -1,14 +1,12 @@
 import { aboutData } from '../../constants/data';
+import { aboutCvLink } from '../../constants/data';
 import Button from '../Button';
 import Image from 'next/image';
 import aboutImage from '../../public/assets/aboutMe.jpg';
 import { motion } from 'framer-motion';
 import styled from '../../styles/About.module.scss';
-import { MdPlayArrow } from 'react-icons/md';
-import { useState } from 'react';
 
 const About = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={styled.about}>
       <div className={styled.container}>
@@ -30,12 +28,11 @@ const About = () => {
               </motion.div>
             ))}
             <div className={styled.resume_box}>
-              <a href='https://drive.google.com/file/d/1zNaWwiBewaVr9Thpe0sqsTOe7mLJiBVB/view?usp=share_link' target='_blank' rel='noreferrer'>
-                <Button>English cv</Button>
-              </a>
-              <a href='https://drive.google.com/file/d/1BT_kAvM_d4ga0TVWPSQn7P0meRgDcgG6/view?usp=share_link' target='_blank' rel='noreferrer'>
-                <Button>Dansk cv</Button>
-              </a>
+              {aboutCvLink.map((data, index) => (
+                <a key={index} href={data.link} target='_blank' rel='noreferrer'>
+                  <Button>{data.title}</Button>
+                </a>
+              ))}
             </div>
           </div>
         </div>

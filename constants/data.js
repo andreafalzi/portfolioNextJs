@@ -68,6 +68,17 @@ export const aboutData = [
   },
 ];
 
+export const aboutCvLink = [
+  {
+    link: 'https://drive.google.com/file/d/1EK9KPR_zC2WxgD1gqJ2x1wx4VyUPZY8f/view?usp=share_link',
+    title: 'English CV',
+  },
+  {
+    link: 'https://drive.google.com/file/d/1db50huwhbs6tOLqIToqMy_Qm2UwBNu-V/view?usp=share_link',
+    title: 'Danish CV',
+  },
+];
+
 export const skillsData = [
   {
     title: 'Firebase',
