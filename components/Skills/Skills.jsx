@@ -39,7 +39,7 @@ const Skills = () => {
         </motion.div>
       </div>
       <motion.div variants={scaleSlide} initial='hidden' whileInView='visible' viewport={{ amount: 'all', once: true }} className={styled.gif}>
-        <Image src={laptop} alt='laptop' />
+        <Image unoptimized={true} src={laptop} alt='laptop' />
       </motion.div>
     </div>
   );
